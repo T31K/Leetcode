@@ -11,7 +11,8 @@ const balancedStringSplit = (s) => {
         }
         
         if (r_counter === l_counter){
-            return total_output += 1
+           
         }
+        return total_output += 1
     }
 };
