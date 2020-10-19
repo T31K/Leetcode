@@ -15,5 +15,5 @@ const balancedStringSplit = (s) => {
         }
         
     }
-    return total_output += 1
+    return total_output
 };
