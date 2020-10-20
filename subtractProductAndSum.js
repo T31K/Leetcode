@@ -8,7 +8,6 @@ const subtractProductAndSum = (n) => {
         product *= Number(input[i])
         sum += Number(input[i])
     }
-
     let output = product - sum
     return output
 };
