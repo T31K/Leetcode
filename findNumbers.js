@@ -1,7 +1,3 @@
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var findNumbers = function(nums) {
-    
+const findNumbers = (nums) => {
+    console.log('hello')
 };
