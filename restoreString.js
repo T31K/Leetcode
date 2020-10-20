@@ -3,7 +3,7 @@ const restoreString = function(s, indices) {
     for (let i = 0 ; i < indices.length ; i++){
         output += (s[indices.indexOf(i)])
         }
-    console.log(output)
+    return output
 }
 
 console.log(restoreString(s, indices))
