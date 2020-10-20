@@ -1,9 +1,9 @@
 const restoreString = function(s, indices) {
-    let output = ''
+    const output = []
     for (let i = 0 ; i < indices.length ; i++){
-        output += (s[indices.indexOf(i)])
+        output.push(s[indices.indexOf(i)])
         }
-    return output
+    return output.join('')
 }
 
 console.log(restoreString(s, indices))
