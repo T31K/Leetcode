@@ -5,5 +5,3 @@ const restoreString = function(s, indices) {
         }
     return output.join('')
 }
-
-console.log(restoreString(s, indices))
