@@ -1,7 +1,3 @@
-/**
- * @param {number[]} nums
- * @return {number[]}
- */
-var decompressRLElist = function(nums) {
+// var decompressRLElist = function(nums) {
     
-};
+// };
