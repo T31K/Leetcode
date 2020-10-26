@@ -3,21 +3,34 @@
 // };
 let output_ori = []
 let output_mod = []
-let a_counter = 0
+let output_res = []
 let b_counter = 0
-const costs = [[259,770],[448,54],[926,667],[184,139],[840,118],[577,469]]
+let total = 0
+const costs = [[515,563],[451,713],[537,709],[343,819],[855,779],[457,60],[650,359],[631,42]]
 for (var i = 0 ; i < costs.length ; i++){
     var diff = costs[i][1] - costs[i][0]
     output_ori.push(diff)
     output_mod.push(Math.abs(diff))
 }
-// console.log(output_ori)
-// console.log(output_mod)
-for (var j = 0 ; j < output_mod.length ; j++){
-    Math.mod.apply(0,output_mod)
-}
-console.log(output_mod.indexOf(Math.min.apply(0, output
 
+for (var j = 0 ; j < output_mod.length ; j++){
+    var index = output_mod.indexOf(Math.max.apply(0,output_mod))
+    const min = output_mod.indexOf(Math.min.apply(0,output_mod))
+    output_res.push(index) 
+    output_mod[index] = min
+}
+
+for (var k = 0 ; k < output_res.length ; k++){
+    if (output_ori[output_res[k]] < 0  && b_counter < output_res.length / 2){
+        total += costs[output_res[k]][1]
+        b_counter += 1
+    } else {
+        total += costs[output_res[k]][0]
+
+    }
+}
+
+console.log(total)
 // const min = Math.min.apply(0, output)
 // output[output.indexOf(Math.min.apply(0, output))] = max
 // console.log(output)
