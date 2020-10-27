@@ -1,4 +1,0 @@
-
-var deepestLeavesSum = function(root) {
-    
-};
