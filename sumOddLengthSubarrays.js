@@ -1,7 +1,3 @@
-// var sumOddLengthSubarrays = function(arr) {
-    
-// };
-
 arr = [1,4,2,5,3]
 var i = arr.length
 var output = 0
@@ -10,6 +6,3 @@ for (var i = arr.length ; i > 1 ; i -= 2){
         output += arr[j-arr.length]
     }
 }    
-
-// arr.length = 3
-// arr.length = 1
