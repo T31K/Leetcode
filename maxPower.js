@@ -11,6 +11,7 @@
 // 3. If i + 1 is similar, add +2 (for first repeat) // +1 for consecutive repeats
 // 4. If i+1 is different, crosscheck against counter 2 to see if it is the biggest number
 // 5. Return number
+// *** Special case where by no repeats, just return 1 ***
 
 var maxPower = function(s) {
     let counter = 0
