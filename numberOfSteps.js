@@ -11,4 +11,3 @@ while (num_copy > 0){
         counter++
     }
 }
-console.log(counter)
