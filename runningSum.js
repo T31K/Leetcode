@@ -1,17 +1,11 @@
 // Runtime: 80 ms, faster than 71.96% of JavaScript online submissions for Running Sum of 1d Array.
 // Memory Usage: 39 MB, less than 33.82% of JavaScript online submissions for Running Sum of 1d Array.
+let nums = [3, 1, 2, 10, 1];
+let runningSum;
 
-var runningSum = function(nums) {
-    let sum 
-    let output = []
-    output.push(nums[0])
-
-    for (var i = 1 ; i < nums.length ; i++){
-        sum = 0
-        for (var j = i + 0 ; j >= 0 ; j--){
-            sum += nums[j]
-        }
-        output.push(sum)
-    }
-    return output
-};
+for (let i = 1; i < nums.length; i++) {
+  runningSum = nums[i - 1];
+  let sum = runningSum + nums[i];
+  nums[i] = sum;
+}
+console.log(nums);
