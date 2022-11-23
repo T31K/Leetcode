@@ -1,32 +1,28 @@
+/**
+ * @param {string} s
+ * @return {string}
+ */
 var longestPalindrome = function (s) {
-  let obj = {};
-  for (let i = 0; i < s.length; i++) {
-    if (s[i] in obj) {
-      obj[s[i]] += 1;
-    } else {
-      obj[s[i]] = 1;
-    }
-  }
+  if (s.length < 2) return s;
 
-  let sortedObj = Object.entries(obj)
-    .sort(([, a], [, b]) => a - b)
-    .reverse();
-  let output = 0;
-  let usedOne = false;
+  let start = 0;
+  let maxLength = 1;
 
-  for (let i = 0; i < sortedObj.length; i++) {
-    let currentNum = sortedObj[i][1];
-
-    if (currentNum % 2 === 0) {
-      output += currentNum;
-    } else {
-      if (usedOne) {
-        output += currentNum - 1;
-      } else {
-        output += currentNum;
-        usedOne = true;
+  function expandAroundCenter(left, right) {
+    while (s[left] === s[right] && left >= 0 && right < s.length) {
+      if (right - left + 1 > maxLength) {
+        start = left;
+        maxLength = right - left + 1;
       }
+      left--;
+      right++;
     }
   }
-  return output;
+
+  for (let i = 0; i < s.length; i++) {
+    expandAroundCenter(i - 1, i + 1);
+    expandAroundCenter(i, i + 1);
+  }
+
+  return s.substring(start, start + maxLength);
 };
